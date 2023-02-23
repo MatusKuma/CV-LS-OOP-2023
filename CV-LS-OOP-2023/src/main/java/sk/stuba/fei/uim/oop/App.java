@@ -1,12 +1,59 @@
 package sk.stuba.fei.uim.oop;
-
+import java.util.*;
 public class App {
+
     public static void main(String[] args) {
         System.out.println("Hello world"); /*Cvičenie 1 Task 1*/
         int a = compare(1.2,1.3);
         System.out.println(a);
+        /*Cvičenie 2 Task 3*/
         int[] array = new int[]{1,2,3,4,5,6,7,8,9,10};
         vypisPola(array);
+        String[] znamenia = new String[] {"Capricorn","Aquarius","Pisces","Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius"};
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter day: ");
+        int day = Integer.parseInt(sc.nextLine());
+        System.out.println("Enter month: ");
+        int month = Integer.parseInt(sc.nextLine());
+        int end;
+        while(true){
+            if(isdatevalid(day,month)==0){
+                System.out.println("Invalid date, try again");
+                System.out.println("Enter day: ");
+                day = Integer.parseInt(sc.nextLine());
+                System.out.println("Enter month: ");
+                month = Integer.parseInt(sc.nextLine());
+                continue;
+            }
+            else{
+                System.out.println("Zodiac sign for date "+day+"."+month+". is "+znamenia[zistiZnamenie(day,month)]);
+            }
+            System.out.println("To end enter 0");
+            end = Integer.parseInt(sc.nextLine());
+            if(end == 0){
+                System.out.println("END");
+                break;
+            }
+            System.out.println("Enter day: ");
+            day = Integer.parseInt(sc.nextLine());
+            System.out.println("Enter month: ");
+            month = Integer.parseInt(sc.nextLine());
+
+        } /* Cvičenie 2 Task 1*/
+        /*Cvičenie 2 Task 2*/
+        int[] pole = new int[10];
+        for(int i = 0;i< pole.length;i++){
+            System.out.println("Enter "+(i+1)+". to array: ");
+            pole[i] = Integer.parseInt(sc.nextLine());
+        }
+        vypisPola(pole);
+        /*Cvičenie 2 Task 4*/
+        int[] unorderred_array = new int[]{5,6,9,1,3,7,8,4,2,10};
+        int[] orderred_array = new int[10];
+        for(int j = 0;j < unorderred_array.length;j++){
+
+        }
+
 
     }
 
@@ -31,4 +78,113 @@ public class App {
             System.out.println("cislo na "+(i+1)+"tej pozici je cislo "+array[i]);
         }
     } /*Príklad z prednášky č.1*/
+    public static int zistiZnamenie(int den,int mesiac){
+        switch (mesiac){
+            case 1:
+                if(den<21){
+                    return 0;
+                }
+                else{
+                    return 1;
+                }
+            case 2:
+                if(den<20){
+                    return 1;
+                }
+                else{
+                    return 2;
+                }
+            case 3:
+                if(den<21){
+                    return 2;
+                }
+                else{
+                    return 3;
+                }
+            case 4:
+                if(den<21){
+                    return 3;
+                }
+                else{
+                    return 4;
+                }
+                case 5:
+                if(den<21){
+                    return 4;
+                }
+                else{
+                    return 5;
+                }
+            case 6:
+                if(den<22){
+                    return 5;
+                }
+                else{
+                    return 6;
+                }
+            case 7:
+                if(den<23){
+                    return 6;
+                }
+                else{
+                    return 7;
+                }
+            case 8:
+                if(den<23){
+                    return 7;
+                }
+                else{
+                    return 8;
+                }
+            case 9:
+                if(den<23){
+                    return 8;
+                }
+                else{
+                    return 9;
+                }
+            case 10:
+                if(den<23){
+                    return 9;
+                }
+                else{
+                    return 10;
+                }
+            case 11:
+                if(den<23){
+                    return 10;
+                }
+                else{
+                    return 11;
+                }
+            case 12:
+                if(den<22){
+                    return 11;
+                }
+                else{
+                    return 0;
+                }
+            default:
+                return -1;
+        }
+    } /* Cvičenia 2 Task 1*/
+
+    public static int isdatevalid(int day,int month){
+        if((day<1)||(day>31)){
+            return 0;
+        }
+        if((month<1)||(month>12)){
+            return 0;
+        }
+        if((month==2)&&(day>29)){
+            return 0;
+        }
+        if(((month==4)||(month==6)||(month==9)||(month==11))&&(day>30)){
+            return 0;
+        }
+        else{
+            return 1;
+        }
+
+    }
 }
