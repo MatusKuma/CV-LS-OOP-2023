@@ -48,15 +48,26 @@ public class App {
         }
         vypisPola(pole);
         /*Cvičenie 2 Task 4*/
-        int[] unorderred_array = new int[]{5,6,9,1,3,7,8,4,2,10};
-        int[] orderred_array = new int[10];
-        for(int j = 0;j < unorderred_array.length;j++){
+        int[] arrayToSort = new int[]{5,6,9,1,3,7,8,4,2,10};
+        sortArrray(arrayToSort);
+        vypisPola(arrayToSort);
 
-        }
+
 
 
     }
-
+    public static void sortArrray(int[] pole){
+        int temp;
+        for(int i = 1;i<pole.length;i++){
+            for(int j = 1;j<pole.length-i;j++){
+                if(pole[j]<pole[j-1]){
+                    temp = pole[j];
+                    pole[j] = pole[j-1];
+                    pole[j-1]=temp;
+                }
+            }
+        }
+    }
 
     public static int compare(double a, double b){
         if(a < b){
