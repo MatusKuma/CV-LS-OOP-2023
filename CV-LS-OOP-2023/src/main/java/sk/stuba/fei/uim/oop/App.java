@@ -41,21 +41,43 @@ public class App {
 
         } /* Cvičenie 2 Task 1*/
         /*Cvičenie 2 Task 2*/
-        int[] pole = new int[10];
+        /*int[] pole = new int[10];
         for(int i = 0;i< pole.length;i++){
             System.out.println("Enter "+(i+1)+". to array: ");
             pole[i] = Integer.parseInt(sc.nextLine());
         }
-        vypisPola(pole);
+        vypisPola(pole);*/
         /*Cvičenie 2 Task 4*/
         int[] arrayToSort = new int[]{5,6,9,1,3,7,8,4,2,10};
         sortArrray(arrayToSort);
         vypisPola(arrayToSort);
 
+        /*Cvičenie 2 Task 4*/
+
+        int[][] matrix = new int[3][3];
+        for(int line = 0;line<matrix.length;line++){
+            for(int column = 0;column<matrix[0].length;column++){
+                matrix[line][column]=column+1;
+            }
+        }
+        int det = determinant(matrix);
+        System.out.println("Determinant Matice je "+det);
+
 
 
 
     }
+    /*Task 5 cvicenia 2ň
+
+    (00*11*22 + 01*12*20 + 10*21*02)-(02*11*20 + 10*01*22 + 21*12*00)
+
+    */
+    public static int determinant(int[][] matrix){
+        int determinant;
+        determinant = ((matrix[0][0]*matrix[1][1]*matrix[2][2])+(matrix[0][1]*matrix[1][2]*matrix[2][0])+(matrix[1][0]*matrix[2][1]*matrix[0][2]))-((matrix[0][2]*matrix[1][1]*matrix[2][0])+(matrix[1][0]*matrix[0][1]*matrix[2][2])+(matrix[2][1]*matrix[1][2]*matrix[0][0]));
+        return determinant;
+    }
+
     public static void sortArrray(int[] pole){
         int temp;
         for(int i = 1;i<pole.length;i++){
