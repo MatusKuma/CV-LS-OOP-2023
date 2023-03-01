@@ -41,12 +41,12 @@ public class App {
 
         } /* Cvičenie 2 Task 1*/
         /*Cvičenie 2 Task 2*/
-        /*int[] pole = new int[10];
+        int[] pole = new int[10];
         for(int i = 0;i< pole.length;i++){
             System.out.println("Enter "+(i+1)+". to array: ");
             pole[i] = Integer.parseInt(sc.nextLine());
         }
-        vypisPola(pole);*/
+        vypisPola(pole);
         /*Cvičenie 2 Task 4*/
         int[] arrayToSort = new int[]{5,6,9,1,3,7,8,4,2,10};
         sortArrray(arrayToSort);
