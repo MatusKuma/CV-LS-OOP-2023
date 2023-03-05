@@ -1,5 +1,6 @@
 package sk.stuba.fei.uim.oop;
 import java.util.*;
+
 public class App {
 
     public static void main(String[] args) {
@@ -62,6 +63,11 @@ public class App {
         }
         int det = determinant(matrix);
         System.out.println("Determinant Matice je "+det);
+        /*
+        Cvicenie 3 task 1
+        */
+        Student ziak = new Student(115081,"Matus","Kuma",21);
+        ziak.vypis();
 
 
 
