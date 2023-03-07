@@ -1,6 +1,8 @@
 package sk.stuba.fei.uim.oop;
 import java.util.*;
 
+
+
 public class App {
 
     public static void main(String[] args) {
@@ -68,12 +70,37 @@ public class App {
         */
         Student ziak = new Student(115081,"Matus","Kuma",21);
         ziak.vypis();
+        Student[] studenti = new Student[3];
+
+        for(int pocetStudent = 0; pocetStudent < 3;pocetStudent++){
+
+            studenti[pocetStudent] = new Student();
+            System.out.println("Enter ID of "+ (pocetStudent+1) + " student");
+            studenti[pocetStudent].setId(Integer.parseInt(sc.nextLine()));
+            System.out.println("Enter name of "+ (pocetStudent+1) + " student");
+            studenti[pocetStudent].setMeno(sc.nextLine());
+            System.out.println("Enter surname of "+ (pocetStudent+1) + " student");
+            studenti[pocetStudent].setPriezvisko(sc.nextLine());
+            System.out.println("Enter age of "+ (pocetStudent+1) + " student");
+            studenti[pocetStudent].setVek(Integer.parseInt(sc.nextLine()));
+        }
+        for (Student student : studenti) {
+            student.vypis();
+        }
+        for (Student student : studenti) {
+            student.vypis();
+        }
+
+
+
+
+
 
 
 
 
     }
-    /*Task 5 cvicenia 2ň
+    /*Task 5 cvicenia 2
 
     (00*11*22 + 01*12*20 + 10*21*02)-(02*11*20 + 10*01*22 + 21*12*00)
 

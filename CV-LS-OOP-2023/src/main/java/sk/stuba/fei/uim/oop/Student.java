@@ -56,5 +56,15 @@ public class Student {
         System.out.println("Surname: "+this.priezvisko);
         System.out.println("Age: "+this.vek);
     }
-
+    public int compare(Student student1,Student student2){
+        if (student1.vek<student2.vek){
+            return 1;
+        }
+        if(student1.vek==student2.vek){
+            return 0;
+        }
+        else{
+            return -1;
+        }
+    }
 }
